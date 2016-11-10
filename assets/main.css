@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Cutive|Lobster|Rubik|Scope+One|Shrikhand|Work+Sans');
+body{
+    background: url("http://kingofwallpapers.com/background-images-for-websites/background-images-for-websites-016.jpg");
+    background-size: cover;
+}
+
+/*
+font-family: 'Lobster', cursive;
+font-family: 'Shrikhand', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Work Sans', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Cutive', serif;
+font-family: 'Scope One', serif;
+*/
+
+.symbol {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double white;
+  width: 30px;
+  height: 30px;
+}
+
+.symbol-empty {
+  background-color: #ccc;
+}
+
+.symbol-filled {
+  background-color: black;
+}
+.glyphicon {
+    font-size: 25px !important;
+}
+.feedback{
+    font-family: 'Work Sans', serif;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 1em;
+    padding: 2em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background: rgba(87,100,117,0.8);
+    color: #fff;
+}
+.feedback h2{
+    font-family: 'Comfortaa', cursive;
+    padding: 0.8em;
+    font-size: 2em;
+    text-align: center;
+    background: #44505E;
+}
+
+.feedback form button{
+    background: rgba(0,0,0,1);
+    border: none;
+    padding: 0.4em 1em;
+    font-size: 1.1em;
+    color: #fff;
+    
+    font-family: 'Work Sans', sans-serif;
+    font-family: 'Cutive', serif;
+    font-family: 'Lobster', cursive;
+    
+    
+    
+}
