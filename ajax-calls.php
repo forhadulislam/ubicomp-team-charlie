@@ -3,7 +3,7 @@
     
     function getRestroomStatus($con){
         
-        $query = "SELECT * FROM restrooms";
+        $query = "SELECT `restroom-name`, AVG(`toilet-paper`) AS `toilet-paper`, AVG(`handwash`) AS `handwash`, AVG(`paper-towel`) AS `paper-towel`, AVG(`wet-floor`) AS `wet-floor` FROM `restroomstatus` GROUP BY `restroom-name` ";
         $result = mysqli_query($con, $query);
         $html = "";
         
