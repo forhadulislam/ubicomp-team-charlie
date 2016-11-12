@@ -29,7 +29,7 @@
         <div class="feedback col-md-6 col-md-offset-3">
           <h2>Restroom feedback</h2>
       
-          <form class="" method="post">
+          <form class="feedback-form" method="post">
             
             <div class="form-group">
               <label for="sel1">Current restroom</label>
@@ -45,33 +45,38 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Was there enough toilet paper ? </label>
               <div>
-                <input name="toilet-paper" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false">
+                Bad <input required name="toilet-paper" id="toilet-paper" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false"> Excellent
               </div>
             </div>
             
             <div class="form-group">
               <label for="exampleInputEmail1">Was there enough handwash ? </label>
               <div>
-                <input name="handwash" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false">
+                Not Enough <input required name="handwash" id="handwash" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false"> Enough
               </div>
             </div>
             
             <div class="form-group">
               <label for="exampleInputEmail1">Was the floor wet ? </label>
               <div>
-                <input name="wetfloor" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false">
+                Not wet <input required name="wet-floor" id="wet-floor" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false"> Wet
               </div>
             </div>
             
             <div class="form-group">
               <label for="exampleInputEmail1">Was there enough paper towel ? </label>
               <div>
-                <input name="paper-towel" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false">
+                Not Enough <input required name="paper-towel" id="paper-towel" type="hidden" class="rating" min=1 max=5 step=1 data-size="sm" data-rtl="false"> Enough
               </div>
             </div>
             
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
+        </div>
+        
+        
+        <div class="success">
+          
         </div>
       
 <?php
