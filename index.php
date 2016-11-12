@@ -2,19 +2,19 @@
     include_once("config.php");
     
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $restroom = $_POST["restroom-name"]; 
-        $toiletpaper = $_POST["toilet-paper"]; 
+        $restroom = $_POST['restroom-name']; 
+        $toiletpaper = $_POST['toilet-paper']; 
         $handwash = $_POST['handwash'];
         $wetfloor = $_POST['wet-floor'];
         $papertowel = $_POST['paper-towel'];
 
-        $result_update = mysqli_query($con,"UPDATE restrooms SET `toilet-paper`='".$toiletpaper."',`handwash`='".$handwash."',
-                                `wet-floor`='".$wetfloor."',`paper-towel`='".$papertowel."' WHERE id='".$restroom."'");
+        $result_update = mysqli_query($con,"INSERT INTO `restroomstatus` (`restroom-name`, `toilet-paper`, `handwash`, `wet-floor`, `paper-towel`) 
+			VALUES ('$restroom','$toiletpaper','$handwash','5','$papertowel')");
 
         if( $result_update ){ 
             echo "Success";
         }else{
-            echo 'Error';
+            echo "Error";
         }
     }
     
