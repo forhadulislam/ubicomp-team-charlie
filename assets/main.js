@@ -3,11 +3,13 @@
 
 $(document).ready(function(){
     
-    console.log("Loaded"); 
+    if( $('.rating').length ){
+         $(".rating").rating({min:1, max:5, step:1, size:'md'});
+    } 
     
-    $(".rating").rating({min:1, max:5, step:1, size:'md'});
     
-    $(".status tbody").load("ajax-calls.php");
+    
+    $(".status tbody").load("ajax-calls.php?func=getRestroomStatus");
     
     $(".feedback-form").submit(function(){
        var toiletPaper = $("#toilet-paper").val();
@@ -23,20 +25,35 @@ $(document).ready(function(){
     });
     
     var updateStatus = function(){
-        /*$(".status tbody").load( "ajax-calls.php");
-        updateStatus();*/
         
         var saveData = $.ajax({
-              type: 'POST',
+              type: 'GET',
+              data: { func: "getRestroomStatus"},
               url: "ajax-calls.php",
               dataType: "text",
               success: function(resultData) { 
                   $(".status tbody").html(resultData);
                   console.log("Save Complete");
-                  
+                  console.log(resultData);
               }
         });
     }
+    
+    var updateStat = function(){
+        
+        var saveData = $.ajax({
+              type: 'GET',
+              data: { func: "getRestroomStat"},
+              url: "ajax-calls.php",
+              dataType: "text",
+              success: function(resultData) { 
+                  $(".stat tbody").html(resultData);
+                  console.log("Save Complete");
+              }
+        });
+    }
+    
+    setInterval(updateStat,2500);
     setInterval(updateStatus,2500);
     
 })

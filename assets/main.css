@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Cutive|Lobster|Rubik|Scope+One|Shrikhand|Work+Sans');
 body{
     background: url("http://kingofwallpapers.com/background-images-for-websites/background-images-for-websites-016.jpg") no-repeat;
+    background: url("restroom.jpg") no-repeat;
+    background: url("restroom2.jpg") no-repeat;
     background-size: contain;
     background-size:100% 100%;
     padding: 2em;
@@ -38,12 +40,12 @@ font-family: 'Scope One', serif;
 .feedback{
     font-family: 'Work Sans', serif;
     border-radius: 8px;
-    font-size: 18px;
-    margin-top: 1em;
+    font-size: 24px;
+    margin-top: 0.5em;
     padding: 2em;
     padding-top: 2em;
     padding-bottom: 2em;
-    background: rgba(87,100,117,0.8);
+    background: rgba(87,100,117,0.9);
     color: #fff;
 }
 .status-message{
@@ -61,7 +63,7 @@ font-family: 'Scope One', serif;
 .feedback h2{
     font-family: 'Comfortaa', cursive;
     padding: 0.8em;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     background: #44505E;
 }
@@ -76,7 +78,27 @@ font-family: 'Scope One', serif;
     font-family: 'Work Sans', sans-serif;
     font-family: 'Cutive', serif;
     font-family: 'Lobster', cursive;
-    
-    
-    
+}
+
+.sitemap{
+    font-family: 'Work Sans', sans-serif;
+    background: #fff;
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 5px;
+}
+.sitemap h2{
+    text-align: center;
+    font-size: 2.5em;
+}
+.restroom-status{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.3em;
+}
+.restroom-status h2{
+    text-align: center;
+    font-size: 2.5em;
+}
+.restroom-status th, .restroom-status td{
+    text-align: center;
 }
