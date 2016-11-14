@@ -1,6 +1,8 @@
 <?php
     include_once("config.php");
     
+    $status = false;
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $restroom = $_POST['restroom-name']; 
         $toiletpaper = $_POST['toilet-paper']; 
@@ -9,12 +11,12 @@
         $papertowel = $_POST['paper-towel'];
 
         $result_update = mysqli_query($con,"INSERT INTO `restroomstatus` (`restroom-name`, `toilet-paper`, `handwash`, `wet-floor`, `paper-towel`) 
-			VALUES ('$restroom','$toiletpaper','$handwash','5','$papertowel')");
+			VALUES ('$restroom','$toiletpaper','$handwash',$wetfloor,'$papertowel')");
 
         if( $result_update ){ 
-            echo "Success";
+            $status = "success";
         }else{
-            echo "Error";
+            $status = "error";
         }
     }
     
@@ -25,7 +27,9 @@
     
     
 ?>
-
+      <?php
+        if( !$status ){
+      ?>
         <div class="feedback col-md-6 col-md-offset-3">
           <h2>Restroom feedback</h2>
       
@@ -74,11 +78,31 @@
           </form>
         </div>
         
-        
-        <div class="success">
-          
+      <?php
+        }
+      ?>
+      <?php
+        if( $status ){
+      ?>
+        <div class="status-message col-md-6 col-md-offset-3">
+            <?php
+              if($status == "success"){ 
+            ?>
+            <div class="success">
+              <h2> <span class="glyphicon glyphicon-ok"></span> </h2>
+              <h2>Thanks for your feedback!</h2>
+              <meta http-equiv="refresh" content="15">
+            </div>
+            <?php
+              }else{
+            ?>
+              <h2 class="error">Sorry an error occured!! Please try again</h2>
+              <meta http-equiv="refresh" content="15">
+            <?php } ?>
         </div>
-      
+      <?php
+        }
+      ?>
 <?php
     include_once("footer.php");
 ?>    
