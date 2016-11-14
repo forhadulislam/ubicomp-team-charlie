@@ -6,26 +6,34 @@
         $query = "SELECT `restroom-name`, AVG(`toilet-paper`) AS `toilet-paper`, AVG(`handwash`) AS `handwash`, AVG(`paper-towel`) AS `paper-towel`, AVG(`wet-floor`) AS `wet-floor` FROM `restroomstatus` GROUP BY `restroom-name` ";
         $result = mysqli_query($con, $query);
         $html = "";
-        
+       
         while($row = mysqli_fetch_assoc($result)){
-            //$jsonData[] = $row;
+		foreach($row as $k => $v) {
+			if($k != 'restroom-name') {
+				$trow[] = floatval($v);
+			}
+			else {
+				$trow[] = $v;
+			}
+		}
+            $jsonData[] =$trow ;
+            $trow=[];
             
-            if( $row['wet-floor'] == "yes"){
-                $table_class = "danger";
-            }else{
-                $table_class = "";
-            }
-            
-            $html .= "<tr class='$table_class'><td>" . $row['restroom-name'] . "</td>";
-            $html .= "<td>" . $row['toilet-paper'] . "</td>";
-            $html .= "<td>" . $row['handwash'] . "</td>";
-            $html .= "<td>" . $row['wet-floor'] . "</td></tr>";
-        }
+            //if( $row['wet-floor'] == "yes"){
+            //    $table_class = "danger";
+            //}else{
+            //    $table_class = "";
+            //}
+            //
+            //$html .= "<tr class='$table_class'><td>" . $row['restroom-name'] . "</td>";
+            //$html .= "<td>" . $row['toilet-paper'] . "</td>";
+            //$html .= "<td>" . $row['handwash'] . "</td>";
+            //$html .= "<td>" . $row['wet-floor'] . "</td></tr>";
+       }
         
+        return json_encode($jsonData);
         
-        //return json_encode($jsonData);
-        
-        return $html;
+        //return $html;
         
         
     }
